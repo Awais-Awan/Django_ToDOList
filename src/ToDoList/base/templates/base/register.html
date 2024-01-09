@@ -1,0 +1,46 @@
+{% extends 'base/main.html'%}
+
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <div class="header-bar" >
+        <div style="margin-left:230px;">
+        <h1>Register</h1>
+        </div>
+     </div>
+
+
+
+    <div class="card-body">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <label> {{form.username.label}} </label>
+            {{form.username}}
+            <label> {{form.password1.label}} </label>
+            {{form.password1}}
+            <label> {{form.password2.label}} </label>
+            {{form.password2}}
+            {% comment %} {{form.as_p}} {% endcomment %}
+            <input style="margin-top:10px;" class="button" type="submit" value="Register">
+        
+            <p>Already have an account?<a href="{% url 'login' %}">Login!</a></p>
+        </form>
+
+    </div>
+
+
+</body>
+</html>
+
+{%endblock content%}
